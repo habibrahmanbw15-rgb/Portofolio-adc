@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habib Rahman — Portfolio</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/galery.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===== SPRITE IKON =====
+         Semua ikon didefinisikan SATU KALI di sini (gaya outline seragam).
+         Pakai: <svg class="icon"><use href="#icon-nama" /></svg>
+         Ubah bentuk ikon cukup di sini; ubah ketebalan di CSS (--icon-stroke). -->
+    <svg class="sprite-hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-spade" viewBox="0 0 24 24">
+        <path d="M12 2.5C12 2.5 5 8 5 12.5a3.8 3.8 0 0 0 6.6 2.5c-.2 2-.9 3.9-2.6 5.5h6c-1.7-1.6-2.4-3.5-2.6-5.5A3.8 3.8 0 0 0 19 12.5C19 8 12 2.5 12 2.5z" />
+      </symbol>
+      <symbol id="icon-diamond" viewBox="0 0 24 24">
+        <path d="M12 2.5l8 9.5-8 9.5-8-9.5z" />
+      </symbol>
+      <symbol id="icon-layers" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </symbol>
+      <symbol id="icon-pen-tool" viewBox="0 0 24 24">
+        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+        <path d="M2 2l7.586 7.586" />
+        <circle cx="11" cy="11" r="2" />
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </symbol>
+      <symbol id="icon-graduation" viewBox="0 0 24 24">
+        <path d="M22 10L12 5 2 10l10 5 10-5z" />
+        <path d="M6 12v5c3 2.5 9 2.5 12 0v-5" />
+        <path d="M22 10v6" />
+      </symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="M16 18l6-6-6-6" />
+        <path d="M8 6l-6 6 6 6" />
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14" />
+        <path d="M12 5l7 7-7 7" />
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M2 7l10 7 10-7" />
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z" />
+        <path d="M17.5 6.5h.01" />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </symbol>
+    </svg>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="nav-logo">Habib</div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#tentang" class="nav-link">About Me</a></li>
+        <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+        <li><a href="galery.html" class="nav-link">Galeri</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-icon">
+        <svg class="icon"><use href="#icon-spade" /></svg>
+      </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+      <img
+        src="assets/img/home.jpeg"
+        alt=""
+        class="hero-bg"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-intro">Perkenalkan</p>
+        <h1 class="hero-title">
+          HABIB <span class="hero-title-accent">RAHMAN</span>
+        </h1>
+        <ul class="hero-subtitle">
+          <li>Creative Developer</li>
+          <li>Illustrator</li>
+          <li>Desain Grafis</li>
+        </ul>
+        <p class="hero-desc">
+          Terinspirasi dari dunia imajinasi manusia, tanpa batas, penuh emosi<br />
+          dan memiliki kekuatan, menggunakannya adalah senjata tempur<br />
+          yang unik
+        </p>
+        <div class="hero-buttons">
+          <a href="#portofolio" class="btn-vintage">
+            <span class="btn-inner">Portofolio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KARYA UNGGULAN ===== -->
+    <section class="karya-section" id="karya">
+      <div class="section-title-wrap">
+        <div class="section-title-line"></div>
+        <h2 class="section-title">KARYA UNGGULAN</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="karya-grid">
+
+        <!-- Card 2 -->
+        <div class="karya-card">
+          <div class="karya-img-wrap">
+            <img
+              src="assets/img/worledwather.jpg"
+              alt="Karya: Chibi glids"
+              class="karya-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="karya-info">
+            <h3 class="karya-name">Chibi glids</h3>
+            <p class="karya-cat">Illustration</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="karya-card">
+          <div class="karya-img-wrap">
+            <img
+              src="assets/img/dalamair.jpg"
+              alt="Karya: Desain Sinematik"
+              class="karya-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="karya-info">
+            <h3 class="karya-name">Desain Sinematik</h3>
+            <p class="karya-cat">Desain</p>
+          </div>
+        </div>
+        <div class="karya-card">
+          <div class="karya-img-wrap">
+            <img
+              src="assets/img/kaidi.jpg"
+              alt="Karya: Desain Sinematik"
+              class="karya-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="karya-info">
+            <h3 class="karya-name">Desain Sinematik</h3>
+            <p class="karya-cat">Desain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+
+    <!-- Judul section -->
+    <div class="stats-section-heading">
+      <div class="section-title-wrap">
+        <div class="section-title-line"></div>
+        <h2 class="section-title">KARYA YANG DIBUAT</h2>
+        <div class="section-title-line"></div>
+      </div>
+    </div>
+
+    <section class="stats-section" id="portofolio">
+      <div class="stats-box">
+        <div class="stats-grid">
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <svg class="icon"><use href="#icon-pen-tool" /></svg>
+            </div>
+            <div class="stat-number" id="stat-ilustrasi">—</div>
+            <div class="stat-label">Ilustrasi</div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <svg class="icon"><use href="#icon-layers" /></svg>
+            </div>
+            <div class="stat-number" id="stat-desain">—</div>
+            <div class="stat-label">Desain</div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <svg class="icon"><use href="#icon-code" /></svg>
+            </div>
+            <div class="stat-number" id="stat-coding">—</div>
+            <div class="stat-label">Coding</div>
+          </div>
+
+        </div>
+
+        <div class="stats-footer">
+          <p class="stats-footer-text">
+            Silahkan jelajahi lebih banyak dunia yang telah saya buat
+          </p>
+          <a href="galery.html" class="btn-more">
+            <span>Lihat lainnya</span>
+            <svg class="icon"><use href="#icon-arrow-right" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION: TENTANG SAYA
+         (digabung dari about.html)
+    ==================================================== -->
+
+    <!-- Transition: dark → beige -->
+    <div class="section-transition-dark-to-beige"></div>
+
+    <!-- Header Tentang Saya -->
+    <header class="about-header" id="tentang">
+      <div class="header-inner">
+        <div class="header-text">
+          <h1 class="header-title">Tentang Saya</h1>
+          <p class="header-subtitle">
+            Perjalanan, keterampilan, minat, pola pikir, dan tujuan hidup
+          </p>
+        </div>
+        <div class="header-spade"><svg class="icon"><use href="#icon-spade" /></svg></div>
+      </div>
+    </header>
+
+    <!-- Intro: Foto + Bio -->
+    <section class="intro-section">
+      <div class="intro-inner">
+        <!-- Kiri: Foto Profil -->
+        <div class="intro-left">
+          <div class="profile-ring">
+            <div class="profile-ring-inner">
+              <img
+                src="assets/img/profile.jpeg"
+                alt="Foto Profil Habib Rahman"
+                class="profile-img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Bio -->
+        <div class="intro-right">
+          <h2 class="intro-title">Perkenalkan Aku Habib</h2>
+          <p class="intro-desc">
+            Seorang yang memiliki kecenderungan ke berbagai hal yang bersifat
+            kreatif, produktif, dan imajinatif. Dalam perjalanan menempa diri
+            ini, saya telah menemukan apa yang harus dikerjakan — yaitu terus
+            berkembang, berkarya, dan memberikan dampak nyata melalui desain,
+            ilustrasi, dan teknologi.
+          </p>
+
+          <ul class="info-list">
+            <li class="info-item">
+              <span class="info-icon"><svg class="icon"><use href="#icon-user" /></svg></span>
+              <span class="info-label">Nama</span>
+              <span class="info-sep">:</span>
+              <span class="info-value">Habib Rahman</span>
+            </li>
+            <li class="info-item">
+              <span class="info-icon"><svg class="icon"><use href="#icon-graduation" /></svg></span>
+              <span class="info-label">Status</span>
+              <span class="info-sep">:</span>
+              <span class="info-value">Mahasiswa</span>
+            </li>
+            <li class="info-item">
+              <span class="info-icon"><svg class="icon"><use href="#icon-globe" /></svg></span>
+              <span class="info-label">Negara</span>
+              <span class="info-sep">:</span>
+              <span class="info-value">Indonesia</span>
+            </li>
+            <li class="info-item">
+              <span class="info-icon"><svg class="icon"><use href="#icon-code" /></svg></span>
+              <span class="info-label">Keahlian</span>
+              <span class="info-sep">:</span>
+              <span class="info-value">Desain Grafis, Ilustrasi, Coding</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Torn Paper Divider: beige → hitam -->
+    <div class="torn-divider">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,0 L0,40 Q30,55 60,38 Q90,22 120,45 Q150,65 180,42 Q210,20 240,50 Q270,75 300,48 Q330,22 360,52 Q390,78 420,50 Q450,24 480,55 Q510,80 540,52 Q570,26 600,58 Q630,82 660,54 Q690,28 720,60 Q750,85 780,55 Q810,28 840,58 Q870,82 900,52 Q930,24 960,56 Q990,80 1020,50 Q1050,22 1080,52 Q1110,78 1140,48 Q1170,20 1200,50 Q1230,76 1260,46 Q1290,18 1320,48 Q1350,74 1380,44 Q1410,18 1440,42 L1440,0 Z"
+          fill="#f5e6c8"
+        />
+      </svg>
+    </div>
+
+    <!-- Perjalanan + Keterampilan -->
+    <section class="mid-section">
+      <div class="mid-inner">
+        <!-- Kiri: Timeline -->
+        <div class="journey-col">
+          <div class="ribbon-title">
+            <span>Perjalanan Mengasah Kemampuan</span>
+            <div class="ribbon-tail"></div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-diamond"><svg class="icon"><use href="#icon-diamond" /></svg></div>
+              <div class="timeline-content">
+                <h4 class="timeline-year">2019 – 2022</h4>
+                <p class="timeline-desc">
+                  Mulai menyukai dunia ilustrasi, seni visual, dan berbagai
+                  cerita fantasi.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-diamond"><svg class="icon"><use href="#icon-diamond" /></svg></div>
+              <div class="timeline-content">
+                <h4 class="timeline-year">2022 – 2024</h4>
+                <p class="timeline-desc">
+                  Memasuki dunia sastra dan mulai mendalami desain grafis serta
+                  media kreatif.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-diamond"><svg class="icon"><use href="#icon-diamond" /></svg></div>
+              <div class="timeline-content">
+                <h4 class="timeline-year">2024 – Sekarang</h4>
+                <p class="timeline-desc">
+                  Mulai belajar coding, pengembangan website, UI/UX, dan
+                  membangun berbagai proyek digital.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Skill Badges -->
+        <div class="skills-col">
+          <div class="ribbon-title">
+            <span>Keterampilan yang Dimiliki</span>
+            <div class="ribbon-tail"></div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Desain</h4>
+            <div class="skill-badges">
+              <span class="badge">Canva</span>
+              <span class="badge">Figma</span>
+              <span class="badge">CorelDraw</span>
+              <span class="badge">Affinity Designer</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Ilustrasi</h4>
+            <div class="skill-badges">
+              <span class="badge">Ibis Paint</span>
+              <span class="badge">Paper Drawing</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Pengembangan</h4>
+            <div class="skill-badges">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">React</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Lainnya</h4>
+            <div class="skill-badges">
+              <span class="badge">Psikologi</span>
+              <span class="badge">Kreativitas</span>
+              <span class="badge">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tujuan Hidup -->
+    <section class="goals-section">
+      <div class="goals-inner">
+        <div class="goals-ribbon-wrap">
+          <div class="goals-ribbon">
+            <span>Tujuan dan Rencana Masa Depan</span>
+          </div>
+        </div>
+
+        <!-- Kartu dirender oleh assets/js/goals.js dari data di assets/js/data.js -->
+        <div class="goals-marquee" id="goals-marquee">
+          <div class="goals-track" id="goals-track"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION: HUBUNGI SAYA / CONTACT ME + FOOTER
+    ====================================================== -->
+    <section class="contact-section" id="contact">
+      <img
+        src="assets/img/footerbackground.jpeg"
+        alt=""
+        class="contact-bg"
+        loading="lazy"
+      />
+      <!-- Overlay gradient gelap atas → bawah -->
+      <div class="contact-overlay"></div>
+
+      <div class="contact-wrapper">
+        <!-- ── HEADER ── -->
+        <div class="contact-header">
+          <div class="contact-diamond"><svg class="icon"><use href="#icon-diamond" /></svg></div>
+          <div class="contact-header-text">
+            <h2 class="contact-title">Hubungi Saya</h2>
+            <p class="contact-subtitle">
+              Silahkan tinggalkan pesan atau hanya sekedar menyapa
+            </p>
+          </div>
+        </div>
+
+        <!-- ── BODY: 2 KOLOM ── -->
+        <div class="contact-body">
+          <!-- Kolom Kiri: Daftar Kontak -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg class="icon"><use href="#icon-mail" /></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value"
+                  >habibrahmanbw15@gmail.com</span
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg class="icon"><use href="#icon-instagram" /></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Instagram</span>
+                <span class="contact-item-value">@mitsuhibi</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg class="icon"><use href="#icon-github" /></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Github</span>
+                <span class="contact-item-value"
+                  >github.com/habibrahmanbw15-rgb</span
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg class="icon"><use href="#icon-linkedin" /></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">Habib Rahman</span>
+              </div>
+            </div>
+          </div>
+          <!-- /contact-info -->
+
+          <!-- Kolom Kanan: Form Kontak -->
+          <div class="contact-form-wrap">
+            <form class="contact-form" id="contact-form" action="#" method="post" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="cf-nama">Nama :</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cf-nama"
+                  name="nama"
+                  placeholder="Masukkan nama kamu"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cf-email">Email :</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="cf-email"
+                  name="email"
+                  placeholder="alamat@email.kamu"
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cf-asal">Asal :</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cf-asal"
+                  name="asal"
+                  placeholder="Kota / Instansi kamu"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cf-pesan">Pesan :</label>
+                <textarea
+                  class="form-textarea"
+                  id="cf-pesan"
+                  name="pesan"
+                  placeholder="Tulis pesanmu di sini..."
+                  rows="6"
+                ></textarea>
+              </div>
+
+              <!-- Jebakan bot: disembunyikan dari pengguna, diperiksa di contact.js -->
+              <div class="form-hp" aria-hidden="true">
+                <label for="cf-website">Website</label>
+                <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <button class="btn-kirim" type="submit">
+                <span>Kirim Pesan</span>
+              </button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <!-- /contact-form-wrap -->
+        </div>
+        <!-- /contact-body -->
+      </div>
+      <!-- /contact-wrapper -->
+
+      <!-- Bottom bar -->
+      <div class="contact-bottom-bar">
+        <p class="contact-copyright">
+          &copy; 2026 Habib Rahman &mdash; Semua hak dilindungi.
+        </p>
+      </div>
+    </section>
+    <!-- /contact-section -->
+    <script src="assets/data.js"></script>
+    <script src="assets/goal.js"></script>
+    <script src="assets/contact.js"></script>
+    <!-- galery.js dimuat untuk membaca GALERI_COUNTS dan mengisi angka statistik -->
+    <script src="assets/galery.js"></script>
+    <script>
+      /* Isi angka statistik dari data galeri yang sudah dimuat */
+      (function () {
+        function animateCount(el, target) {
+          if (!el) return;
+          var start   = 0;
+          var dur     = 900;
+          var startTs = null;
+          function step(ts) {
+            if (!startTs) startTs = ts;
+            var progress = Math.min((ts - startTs) / dur, 1);
+            /* ease-out cubic */
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        function fillStats() {
+          var c = window.GALERI_COUNTS;
+          if (!c) return;
+          animateCount(document.getElementById('stat-ilustrasi'), c.ilustrasi);
+          animateCount(document.getElementById('stat-desain'),    c.desain);
+          animateCount(document.getElementById('stat-coding'),    c.coding);
+        }
+
+        /* Jalankan saat elemen masuk viewport (Intersection Observer) */
+        var statsBox = document.querySelector('.stats-box');
+        if (statsBox && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries, observer) {
+            if (entries[0].isIntersecting) {
+              fillStats();
+              observer.disconnect();
+            }
+          }, { threshold: 0.3 });
+          io.observe(statsBox);
+        } else {
+          /* Fallback: isi langsung */
+          fillStats();
+        }
+      })();
+    </script>
+  </body>
+</html>

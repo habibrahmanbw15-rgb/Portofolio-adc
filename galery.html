@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri — Habib Rahman</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/galery.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== SVG SPRITE ===== -->
+  <svg class="sprite-hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-spade" viewBox="0 0 24 24">
+      <path d="M12 2.5C12 2.5 5 8 5 12.5a3.8 3.8 0 0 0 6.6 2.5c-.2 2-.9 3.9-2.6 5.5h6c-1.7-1.6-2.4-3.5-2.6-5.5A3.8 3.8 0 0 0 19 12.5C19 8 12 2.5 12 2.5z"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </symbol>
+    <symbol id="icon-pen" viewBox="0 0 24 24">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+    </symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+      <line x1="7" y1="7" x2="7.01" y2="7"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="icon-tools" viewBox="0 0 24 24">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="gl-navbar">
+    <a href="index.html" class="gl-back-btn" aria-label="Kembali ke halaman utama">
+      <svg class="icon" style="font-size:1.1rem"><use href="#icon-arrow-left"/></svg>
+      <span>Kembali</span>
+    </a>
+    <div class="gl-nav-center">
+      <span class="gl-nav-title">Galeri Karya</span>
+    </div>
+    <div class="gl-nav-logo" aria-hidden="true">
+      <svg class="icon" style="font-size:1.6rem"><use href="#icon-spade"/></svg>
+    </div>
+  </nav>
+
+  <!-- ===== HERO STRIP ===== -->
+  <header class="gl-hero">
+    <div class="gl-hero-inner">
+      <p class="gl-hero-eyebrow">Koleksi Karya</p>
+      <h1 class="gl-hero-title">Habib <span class="gl-hero-accent">Rahman</span></h1>
+      <p class="gl-hero-sub">Ilustrasi · Desain · Coding</p>
+    </div>
+  </header>
+
+  <!-- ===== TAB NAVIGATION ===== -->
+  <div class="gl-tabs-wrap" id="glTabsWrap">
+    <nav class="gl-tabs" role="tablist" aria-label="Kategori galeri">
+
+      <button class="gl-tab active" id="tab-ilustrasi"
+        role="tab" aria-selected="true" aria-controls="panel-ilustrasi"
+        data-tab="ilustrasi">
+        <svg class="icon" style="font-size:1rem"><use href="#icon-image"/></svg>
+        <span>Ilustrasi</span>
+        <span class="gl-tab-count" id="count-ilustrasi">0</span>
+      </button>
+
+      <button class="gl-tab" id="tab-desain"
+        role="tab" aria-selected="false" aria-controls="panel-desain"
+        data-tab="desain">
+        <svg class="icon" style="font-size:1rem"><use href="#icon-pen"/></svg>
+        <span>Desain</span>
+        <span class="gl-tab-count" id="count-desain">0</span>
+      </button>
+
+      <button class="gl-tab" id="tab-coding"
+        role="tab" aria-selected="false" aria-controls="panel-coding"
+        data-tab="coding">
+        <svg class="icon" style="font-size:1rem"><use href="#icon-code"/></svg>
+        <span>Coding</span>
+        <span class="gl-tab-count" id="count-coding">0</span>
+      </button>
+
+    </nav>
+    <!-- aktif indikator -->
+    <div class="gl-tab-indicator" id="glTabIndicator" aria-hidden="true"></div>
+  </div>
+
+  <!-- ===== PANEL: ILUSTRASI ===== -->
+  <section class="gl-panel" id="panel-ilustrasi"
+    role="tabpanel" aria-labelledby="tab-ilustrasi">
+
+    <div class="gl-panel-header">
+      <h2 class="gl-panel-title">Ilustrasi</h2>
+      <p class="gl-panel-desc">Karya ilustrasi digital dan manual — dari chibi hingga fantasi.</p>
+    </div>
+
+    <div class="gl-grid" id="grid-ilustrasi" role="list">
+      <!-- injected by galery.js -->
+    </div>
+
+    <div class="gl-empty" id="empty-ilustrasi" style="display:none;" aria-live="polite">
+      <div class="gl-empty-icon" aria-hidden="true">🎨</div>
+      <p class="gl-empty-title">Belum ada karya ilustrasi.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== PANEL: DESAIN ===== -->
+  <section class="gl-panel" id="panel-desain"
+    role="tabpanel" aria-labelledby="tab-desain" hidden>
+
+    <div class="gl-panel-header">
+      <h2 class="gl-panel-title">Desain</h2>
+      <p class="gl-panel-desc">Poster, branding, UI mockup, dan visual grafis lainnya.</p>
+    </div>
+
+    <div class="gl-grid" id="grid-desain" role="list">
+      <!-- injected by galery.js -->
+    </div>
+
+    <div class="gl-empty" id="empty-desain" style="display:none;" aria-live="polite">
+      <div class="gl-empty-icon" aria-hidden="true">✏️</div>
+      <p class="gl-empty-title">Belum ada karya desain.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== PANEL: CODING ===== -->
+  <section class="gl-panel" id="panel-coding"
+    role="tabpanel" aria-labelledby="tab-coding" hidden>
+
+    <div class="gl-panel-header">
+      <h2 class="gl-panel-title">Coding</h2>
+      <p class="gl-panel-desc">Proyek web, aplikasi, dan eksperimen kode lainnya.</p>
+    </div>
+
+    <div class="gl-grid" id="grid-coding" role="list">
+      <!-- injected by galery.js -->
+    </div>
+
+    <div class="gl-empty" id="empty-coding" style="display:none;" aria-live="polite">
+      <div class="gl-empty-icon" aria-hidden="true">💻</div>
+      <p class="gl-empty-title">Belum ada karya coding.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== LIGHTBOX / DETAIL MODAL ===== -->
+  <div class="gl-lightbox" id="glLightbox"
+    role="dialog" aria-modal="true" aria-labelledby="lbTitle"
+    style="display:none;">
+    <div class="gl-lb-backdrop" id="glLbBackdrop"></div>
+    <div class="gl-lb-box">
+
+      <!-- close -->
+      <button class="gl-lb-close" id="glLbClose" aria-label="Tutup detail">
+        <svg class="icon" style="font-size:1.2rem"><use href="#icon-close"/></svg>
+      </button>
+
+      <!-- prev / next -->
+      <button class="gl-lb-nav gl-lb-prev" id="glLbPrev" aria-label="Karya sebelumnya">
+        <svg class="icon" style="font-size:1.3rem"><use href="#icon-arrow-left"/></svg>
+      </button>
+      <button class="gl-lb-nav gl-lb-next" id="glLbNext" aria-label="Karya berikutnya">
+        <svg class="icon" style="font-size:1.3rem"><use href="#icon-arrow-right"/></svg>
+      </button>
+
+      <!-- image -->
+      <div class="gl-lb-img-wrap">
+        <img class="gl-lb-img" id="glLbImg" src="" alt="" />
+        <div class="gl-lb-img-placeholder" id="glLbPlaceholder" aria-hidden="true"></div>
+      </div>
+
+      <!-- info -->
+      <div class="gl-lb-info">
+        <div class="gl-lb-badge-row">
+          <span class="gl-lb-badge" id="glLbBadge"></span>
+          <span class="gl-lb-year"  id="glLbYear"></span>
+        </div>
+        <h2 class="gl-lb-title" id="lbTitle"></h2>
+        <p  class="gl-lb-desc"  id="glLbDesc"></p>
+        <div class="gl-lb-tags" id="glLbTags"></div>
+        <div class="gl-lb-tools" id="glLbTools"></div>
+        <a class="gl-lb-link" id="glLbLink" href="#" target="_blank"
+           rel="noopener noreferrer" style="display:none;">
+          <svg class="icon" style="font-size:0.9rem"><use href="#icon-external"/></svg>
+          Lihat Karya
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="gl-footer">
+    <p>&copy; 2026 Habib Rahman &mdash; Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="assets/galery.js"></script>
+</body>
+</html>
